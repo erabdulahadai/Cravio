@@ -80,14 +80,55 @@ Cravio is divided into three major modules to keep the application scalable and 
 ```mermaid
 graph TD
 
-login[Register / Login] --> auth[Authentication]
-browse[Browse Menu] --> menuAPI[Menu API]
-cart[Add to Cart] --> orderAPI[Order Management]
-reserve[Reserve Table] --> reservationAPI[Reservation Management]
+    subgraph Customer
+        A1[Register / Login]
+        A2[Browse Menu]
+        A3[Search Food]
+        A4[Add to Cart]
+        A5[Place Order]
+        A6[Reserve Table]
+        A7[Rate & Review]
+    end
 
-menuAPI --> database[(Database)]
-orderAPI --> database
-reservationAPI --> database```
+    subgraph Backend
+        B1[Authentication]
+        B2[Restaurant APIs]
+        B3[Order Management]
+        B4[Reservation Management]
+        B5[Analytics Engine]
+    end
+
+    subgraph Database
+        D[(Restaurant Database)]
+    end
+
+    subgraph Admin
+        C1[Manage Food]
+        C2[Manage Orders]
+        C3[Manage Reservations]
+        C4[View Analytics]
+    end
+
+    A1 --> B1
+    A2 --> B2
+    A3 --> B2
+    A4 --> B3
+    A5 --> B3
+    A6 --> B4
+    A7 --> B2
+
+    B1 --> D
+    B2 --> D
+    B3 --> D
+    B4 --> D
+
+    D --> B5
+
+    C1 --> B2
+    C2 --> B3
+    C3 --> B4
+    C4 --> B5
+```
 
 ---
 
