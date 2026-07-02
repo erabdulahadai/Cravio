@@ -1,246 +1,318 @@
-# 🍽️ Cravio - Smart Restaurant & Analytics Management System
+# Multi-Restaurant Food Ordering & Analytics System
 
-Cravio is a unified **Restaurant Management and Business Analytics System** that streamlines restaurant operations while providing intelligent business insights. It combines Customer Ordering, Table Reservation, Restaurant Administration, and Data Analytics into a single platform.
+## Project Overview
 
-## 🚧 Current Development Status
-
-**✅ Completed:**
-
-* Customer Authentication (Registration & Login)
-* Interactive Food Menu
-* Search & Filter Functionality
-* Shopping Cart & Order Placement
-* Table Reservation System
-* Ratings & Reviews
-* Order History
-* Admin Dashboard
-* Food Management (Add / Edit / Delete)
-* Order & Reservation Management
-* Food Image Upload
-* Email Notification Integration
-* Sales & Revenue Analytics
-* Food Popularity Analysis
-* Customer Insights Dashboard
-* Sales Prediction using Machine Learning
-
-**🛠️ Future Enhancements:**
-
-* Online Payment Gateway
-* QR Code Menu Ordering
-* Inventory Management
-* AI-based Food Recommendations
-* Multi-Branch Restaurant Support
-* Real-time Order Tracking
+A full-stack multi-restaurant food ordering platform where customers can browse restaurants, explore menus, place food orders, reserve tables, and submit reviews. Restaurant owners can manage their own restaurants, menus, and orders, while a Super Admin manages the entire platform. The system also includes a Python-based analytics module to generate business insights such as sales reports, restaurant performance, food popularity, and revenue trends.
 
 ---
 
-## 📐 System Architecture
+# Objectives
 
-Cravio is divided into three major modules to keep the application scalable and maintainable.
-
-### 1. Customer Portal
-
-*Where customers interact with the restaurant.*
-
-* Register & Login
-* Browse Food Menu
-* Search & Filter Dishes
-* Add Items to Cart
-* Place Orders
-* Reserve Tables
-* Submit Ratings & Reviews
-* View Order History
-* Receive Email Notifications
-
-### 2. Admin Dashboard
-
-*Where restaurant operations are managed.*
-
-* Dashboard Overview
-* Food Management
-* Order Management
-* Reservation Management
-* Food Image Upload
-* Customer Review Monitoring
-
-### 3. Analytics Engine
-
-*Where business decisions become data-driven.*
-
-* Sales & Revenue Reports
-* Food Popularity Analysis
-* Customer Insights Dashboard
-* Sales Prediction using Machine Learning
-* Interactive Data Visualization
+* Develop a multi-vendor restaurant platform.
+* Cover maximum topics from FSD-2.
+* Cover major topics from FCSP-2.
+* Implement role-based authentication.
+* Generate business analytics using restaurant data.
 
 ---
 
-## 📊 System Flow
-
-```mermaid
-graph TD
-
-    subgraph Customer
-        A1[Register / Login]
-        A2[Browse Menu]
-        A3[Search Food]
-        A4[Add to Cart]
-        A5[Place Order]
-        A6[Reserve Table]
-        A7[Rate & Review]
-    end
-
-    subgraph Backend
-        B1[Authentication]
-        B2[Restaurant APIs]
-        B3[Order Management]
-        B4[Reservation Management]
-        B5[Analytics Engine]
-    end
-
-    subgraph Database
-        D[(Restaurant Database)]
-    end
-
-    subgraph Admin
-        C1[Manage Food]
-        C2[Manage Orders]
-        C3[Manage Reservations]
-        C4[View Analytics]
-    end
-
-    A1 --> B1
-    A2 --> B2
-    A3 --> B2
-    A4 --> B3
-    A5 --> B3
-    A6 --> B4
-    A7 --> B2
-
-    B1 --> D
-    B2 --> D
-    B3 --> D
-    B4 --> D
-
-    D --> B5
-
-    C1 --> B2
-    C2 --> B3
-    C3 --> B4
-    C4 --> B5
-```
-
----
-
-## 📈 Analytics Module
-
-Cravio transforms restaurant data into meaningful business insights.
-
-### 📊 Sales & Revenue Analytics
-
-* Monitor daily, weekly, and monthly revenue.
-* Track sales performance through interactive charts.
-* Identify business growth trends.
-
-### 🍕 Food Popularity Analysis
-
-* Discover best-selling dishes.
-* Analyze customer ordering patterns.
-* Compare food performance over different periods.
-
-### 👥 Customer Insights
-
-* Understand customer purchasing behavior.
-* Monitor order frequency.
-* Analyze customer engagement through reviews and ratings.
-
-### 🤖 Sales Prediction
-
-* Predict future sales using historical order data.
-* Support inventory planning.
-* Help restaurant owners make informed business decisions using machine learning.
-
----
-
-## 🚀 Features
-
-### 🍽️ Customer Features
-
-* Secure User Registration & Login
-* Browse Food Menu
-* Search & Filter Food Items
-* Shopping Cart
-* Online Order Placement
-* Table Reservation
-* Ratings & Reviews
-* Order History
-* Email Notifications
-
-### 👨‍💼 Admin Features
-
-* Admin Dashboard
-* Food Management
-* Order Management
-* Reservation Management
-* Food Image Upload
-
-### 📊 Analytics Features
-
-* Sales & Revenue Dashboard
-* Food Popularity Reports
-* Customer Insights Dashboard
-* Sales Prediction
-* Interactive Data Visualization
-
----
-
-## 🛠️ Tech Stack
+# Technology Stack
 
 ### Frontend
 
 * React.js
-* HTML5
-* CSS3
-* JavaScript
+* React Router
+* Axios
+* Bootstrap
 
 ### Backend
 
-* Node.js
-* Express.js
+* Python
+* Django
+* Django REST Framework (DRF)
 
-### Data Analytics & Machine Learning
+### Database
+
+* MongoDB Atlas
+* MongoEngine (Django ODM for MongoDB)
+
+### Analytics
 
 * Python
 * Pandas
 * Plotly
-* Scikit-learn
+* Seaborn
+* Scikit-Learn
 
 ---
 
-## 📂 Repository Structure
+# System Architecture
 
 ```text
-/
-├── client/             # React Frontend
-├── server/             # Node.js + Express Backend
-├── analytics/          # Python Analytics & Machine Learning
-├── uploads/            # Food Images
-├── dataset/            # Sales Dataset
-└── README.md
+                     React Frontend
+                            │
+                            ▼
+                    Django REST API
+                            │
+             ┌──────────────┴──────────────┐
+             ▼                             ▼
+        MongoDB Atlas            Python Analytics
+             │                   (Pandas/Plotly)
+             └──────────────┬──────────────┘
+                            ▼
+                   Analytics Dashboard
 ```
 
 ---
 
-## 🎯 Project Goals
+# User Roles
 
-* Simplify restaurant operations through a centralized management system.
-* Provide a seamless ordering and reservation experience for customers.
-* Enable restaurant owners to make data-driven business decisions.
-* Visualize sales and customer trends through interactive dashboards.
-* Predict future sales using machine learning to improve planning and profitability.
+## Customer
+
+* Register/Login
+* Browse Restaurants
+* Search Food
+* Add to Cart
+* Place Orders
+* Reserve Tables
+* Review Restaurants
+* Track Orders
 
 ---
 
-## 📄 License
+## Restaurant Owner
 
-This project is intended for educational, research, and learning purposes.
+* Register Restaurant
+* Manage Restaurant Profile
+* Add/Edit/Delete Food Items
+* Accept/Reject Orders
+* Manage Reservations
+* View Restaurant Analytics
+
+---
+
+## Super Admin
+
+* Approve Restaurants
+* Manage Users
+* Manage Restaurants
+* View Overall Analytics
+* Monitor Platform Performance
+
+---
+
+# Database Collections
+
+```text
+Users
+Restaurants
+Foods
+Categories
+Orders
+Reservations
+Reviews
+Cart
+```
+
+---
+
+# Main Modules
+
+## Customer Module
+
+* Registration & Login
+* Restaurant Listing
+* Restaurant Details
+* Food Menu
+* Cart
+* Checkout
+* Order History
+* Table Reservation
+* Ratings & Reviews
+
+---
+
+## Restaurant Owner Module
+
+* Restaurant Dashboard
+* Menu Management
+* Order Management
+* Reservation Management
+* Restaurant Profile
+* Sales Dashboard
+
+---
+
+## Super Admin Module
+
+* Manage Restaurants
+* Manage Customers
+* Manage Restaurant Owners
+* Platform Statistics
+* Revenue Dashboard
+
+---
+
+# Analytics Module
+
+## Restaurant Analytics
+
+* Restaurant-wise Revenue
+* Monthly Revenue
+* Daily Orders
+* Peak Ordering Hours
+
+---
+
+## Food Analytics
+
+* Most Ordered Food
+* Least Ordered Food
+* Category-wise Sales
+
+---
+
+## Customer Analytics
+
+* Active Customers
+* Average Ratings
+* Customer Ordering Trends
+
+---
+
+## Platform Analytics
+
+* Top Performing Restaurants
+* Revenue Comparison
+* Order Growth
+* Restaurant Performance Ranking
+
+---
+
+## Prediction Module
+
+Predict:
+
+* Next Month Sales
+* Expected Restaurant Revenue
+
+Using:
+
+* Linear Regression
+
+---
+
+# MongoDB Collections
+
+* Users
+* Restaurants
+* Foods
+* Categories
+* Cart
+* Orders
+* Reservations
+* Reviews
+
+---
+
+# React Pages
+
+### Public
+
+* Home
+* Restaurants
+* Restaurant Details
+* About
+* Contact
+
+### Authentication
+
+* Login
+* Register
+
+### Customer
+
+* Cart
+* Checkout
+* Reservations
+* Order History
+* Profile
+
+### Restaurant Owner
+
+* Dashboard
+* Manage Menu
+* Manage Orders
+* Manage Reservations
+* Analytics
+
+### Super Admin
+
+* Dashboard
+* Manage Restaurants
+* Manage Users
+* Platform Analytics
+
+---
+
+# FSD Topics Covered
+
+* React Components
+* BrowserRouter
+* Props
+* useState
+* useEffect
+* useContext
+* Forms & Validation
+* Axios
+* REST APIs
+* Django URL Routing
+* Django Middleware
+* Django Sessions & Cookies
+* Django File Uploads (Restaurant/Food Images)
+* Django Email Backend (SMTP)
+* MongoDB
+* MongoEngine
+* CRUD Operations (Django Views/ViewSets)
+* Aggregation (MongoEngine/Pandas)
+* Search using Regex
+* Authentication & Authorization (Role-Based, Django + DRF)
+
+Coverage: **95%+**
+
+---
+
+# FCSP Topics Covered
+
+* Pandas
+* Data Cleaning
+* Exploratory Data Analysis (EDA)
+* GroupBy & Aggregation
+* Plotly Visualizations
+* Seaborn Charts
+* Revenue Analysis
+* Restaurant Performance Analysis
+* Customer Analysis
+* Linear Regression
+* Model Evaluation
+
+Coverage: **75–80%**
+
+---
+
+# Future Enhancements
+
+* Online Payments
+* Live Order Tracking
+* Google Maps Integration
+* Coupons & Offers
+* Favorite Restaurants
+* Push Notifications
+* AI Food Recommendation
+* Mobile Application
+
+---
+
+# Expected Outcome
+
+A scalable multi-restaurant food ordering platform that enables customers, restaurant owners, and administrators to interact through a single system while providing analytical insights to improve restaurant performance and business decision-making.
